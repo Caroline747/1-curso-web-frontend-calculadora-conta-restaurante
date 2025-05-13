@@ -13,5 +13,24 @@ const metodoPagamento = readline.question('Qual é o método de pagamento (PIX, 
 
 //Façã sua lógica para aplicar o desconto apenas para PIX OU DINHEIRO
 
+let desconto = 0;
+let input = 0; // Inicializando a variável input
 
-// Exibindo os resultados
+
+if (metodoPagamento.toLowerCase() === 'cartão') {
+    desconto = 0; // Sem desconto para cartão
+    input = readline.prompt();
+    console.log('Você escolheu o método de pagamento: ' + metodoPagamento);
+    console.log('Você não receberá desconto na conta.');
+}
+else if (metodoPagamento.toLowerCase() === 'pix' || metodoPagamento.toLowerCase() === 'dinheiro') {
+    desconto = 0.1; // 10% de desconto
+    input = readline.prompt();
+    console.log('Você escolheu o método de pagamento: ' + metodoPagamento);
+    console.log('Você receberá um desconto de 10% na conta.');
+} 
+
+  
+
+
+
